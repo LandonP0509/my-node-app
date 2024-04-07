@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phillippi Counter</title>
+    <style>
+
+        /* Styles */
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            text-align: center;
+        }
+        #counter {
+            font-size: 20px;
+            margin-bottom: 25px;
+        }
+        button {
+            font-size: 15px;
+            margin: 5 10px;
+            padding: 10px 5px;
+            cursor: pointer;
+
+            background-color: bisque;
+        }
+    </style>
+</head>
+<body>
+    <h1>Counter Project</h1> 
+    <div id="counter">0</div> 
+    <button id="increment">Add</button> 
+    <button id="decrement">Subtract</button>
+
+    <script>
+        const counterDisplay = document.getElementById('counter');
+
+        const incrementButton = document.getElementById('increment'); // DOM Add Button
+        
+        const decrementButton = document.getElementById('decrement'); // DOM Subtract Button
+
+        let count = 0;
+
+        function updateCounter() {
+            counterDisplay.textContent = count;
+        }
+
+        function incrementCount() {
+            count++;
+            updateCounter(); // Update count
+        }
+
+        function decrementCount() {
+            count--;
+            updateCounter(); // Update count
+        }
+
+        incrementButton.addEventListener('click', incrementCount);
+        decrementButton.addEventListener('click', decrementCount);
+    </script>
+</body>
+</html>
